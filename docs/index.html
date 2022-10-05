@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-cn">
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
@@ -9,26 +9,66 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 </head>
 <body>
-  <nav>
+  <!-- <nav>
     <a href="#/">EN</a>
     <a href="#/zh-cn/">中文</a>
-  </nav>
+  </nav> -->
   <div id="app"></div>
   <script>
-//     var num = 0;
-// mermaid.initialize({ startOnLoad: false });
+    var num = 0;
+    // mermaid.initialize({ startOnLoad: false });
+
     window.$docsify = {
       name: '',
-      repo: '',
-      loadSidebar:true,
-      loadNavbar: true,
+      repo: "docsifyjs/docsify",
+      loadSidebar:true, //为 true 时会加载一个左侧导航菜单，默认从_sidebar.md加载
+      subMaxLevel: 2,   // 左侧导航菜单的最大层级
+      loadNavbar: true, // 为 true 时会加载一个顶部导航菜单，默认从_navbar.md加载。
+      auto2top: true, //url 改变时自动滚动到屏幕上方
+      // search: "auto", // default
+      // search: [
+      //   "/", // => /README.md
+      //   "/Linux笔记/00开发环境搭建与配置/安装Linux主机_VirtualBox/安装VirtualBox.md", // => /guide.md
+      //   // "/get-started", // => /get-started.md
+      //   // "/zh-cn/", // => /zh-cn/README.md
+      // ],
+
+      // // complete configuration parameters
+      // search: {
+      //   maxAge: 86400000, // Expiration time, the default one day
+      //   paths: [], // or 'auto'
+      //   placeholder: "Type to search",
+
+      //   // Localization
+      //   placeholder: {
+      //     "/": "搜索",
+      //     // "/": "Type to search",
+      //   },
+
+      //   noData: "No Results!",
+
+      //   // Localization
+      //   noData: {
+      //     "/": "找不到结果",
+      //     // "/": "No Results",
+      //   },
+
+      //   // Headline depth, 1 - 6
+      //   depth: 2,
+
+      //   hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+
+      //   // To avoid search index collision
+      //   // between multiple websites under the same domain
+      //   namespace: "website-1",
+      // }, 
+
       plugins: [
         function(hook) {
           var footer = [
             '<hr/>',
             '<footer>',
-            // '<span><a href="https://github.com/QingWei-Li">cinwell</a> &copy;2017.</span>',
-            // '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+            '<span>备案号:<a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2021008286号-2</a>.</span>',
             '</footer>'
           ].join('');
 
@@ -37,22 +77,24 @@
           });
         }
       ],
-      // markdown: {
-      //   renderer: {
-      //     code: function(code, lang) {
-      //       if (lang === "mermaid") {
-      //         return (
-      //           '<div class="mermaid">' + mermaid.render('mermaid-svg-' + num++, code) + "</div>"
-      //         );
-      //       }
-      //       return this.origin.code.apply(this, arguments);
-      //     }
-      //   }
-      // }
+      markdown: {
+        smartypants: true,
+        // renderer: {
+        //   code: function (code, lang) {
+        //     if (lang === "mermaid") {
+        //       return '<div class="mermaid">' + mermaid.render("mermaid-svg-" + num++, code) + "</div>";
+        //     }
+        //     return this.origin.code.apply(this, arguments);
+        //   },
+        // },
+      },
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <!-- <script src="//cdn.jsdelivr.net/npm/prismjs/components/prism-c.min.js"></script> -->
+  <!-- <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script> -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
 </body>
 </html>
